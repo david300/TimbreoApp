@@ -1,0 +1,68 @@
+<style media="screen">
+  ion-header-bar {
+    color: orange;
+    background: #333333 url(img/cgi/Logo-header.png) center center no-repeat !important;
+    background-size: 30% !important;
+  }
+
+  .left-buttons button, ion-nav-buttons button, .back-button {
+    color: orange !important;
+  }
+
+  ion-content {
+    background-image: url(img/cgi/tramaInf-logo.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+  .on-menu{
+    background-image: none !important;
+  }
+  .on-menu .title {
+    color: white !important;
+  }
+
+  ion-item .icon {
+    margin-right: 10px;
+  }
+</style>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="layoutContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable on-menu">
+      <h1 class="title">{{ hojaDeRuta.Timbrero.Nombre }}</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+
+        <ion-item menu-close href="#/timbreo/registro">
+          <i class="icon ion-android-notifications"></i>
+          Timbrar
+        </ion-item>
+        <ion-item menu-close href="#/timbreo/hojaDeRuta">
+          <i class="icon ion-document-text"></i>
+          Hoja de Ruta
+        </ion-item>
+        <ion-item menu-close href="#/timbreo/mapa">
+          <i class="icon ion-map"></i>
+          Mapa
+        </ion-item>
+        <ion-item menu-close ng-click="logout()">
+          <i class="icon ion-log-out"></i>
+          Salir
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

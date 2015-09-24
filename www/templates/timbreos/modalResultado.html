@@ -1,0 +1,81 @@
+<style media="screen">
+  .x-modal {
+    background-color: white;
+  }
+
+  .x-header {
+    border-bottom: 1px solid #888 !important;
+    background-image: none !important;
+  }
+
+  .x-header div, .x-header h1 {
+    color: white !important;
+  }
+</style>
+
+<ion-modal-view>
+  <ion-header-bar class="x-header">
+    <h1 class="title">Timbreo</h1>
+    <div class="buttons" >
+      <a class="button icon-left ion-close button-clear" ng-click="timbreoModal.hide()"></a>
+    </div>
+  </ion-header-bar>
+  <ion-content class="x-modal">
+
+
+    <div class="list card">
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-home"></i>
+        {{ timbreo.tipoResultado.Nombre }}
+      </a>
+
+    </div>
+
+
+    <!-- <button class="button button-block button-positive" ng-click="verMapa()">
+      <i class="icon ion-map" ></i>
+      Ver Mapa
+    </button> -->
+
+    <div class="list" ng-show="mostrarReclamos">
+      <label class="item item-input item-select">
+        <span class="input-label">Reclamo 1</span>
+        <select class="form-control"
+            ng-model="timbreo.tipoReclamo1"
+            ng-options="tipoReclamo.Id_Tipo_Reclamo as tipoReclamo.Nombre for tipoReclamo in tiposReclamo"
+            ng-change="verificarReclamo1()"
+            required>
+            <option value="">--- Seleccione un Reclamo ---</option>
+        </select>
+      </label>
+      <label class="item item-input item-select" ng-show="mostrarReclamo2">
+        <span class="input-label">Reclamo 2</span>
+        <select class="form-control"
+            ng-model="timbreo.tipoReclamo2"
+            ng-options="tipoReclamo.Id_Tipo_Reclamo as tipoReclamo.Nombre for tipoReclamo in tiposReclamo"
+            ng-change="verificarReclamo2()"
+            required>
+            <option value="">--- Seleccione un Reclamo ---</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select" ng-show="mostrarReclamo3">
+        <span class="input-label">Reclamo 3</span>
+        <select class="form-control"
+            ng-model="timbreo.tipoReclamo3"
+            ng-options="tipoReclamo.Id_Tipo_Reclamo as tipoReclamo.Nombre for tipoReclamo in tiposReclamo"
+            required>
+            <option value="">--- Seleccione un Reclamo ---</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- {{ timbreo | json }} -->
+
+    <button class="button button-block button-balanced" ng-click="timbrar()">
+      <i class="icon ion-document-text" ></i>
+      Timbrear
+    </button>
+  </ion-content>
+</ion-modal-view>

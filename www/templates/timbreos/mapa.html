@@ -1,0 +1,62 @@
+<style media="screen">
+  ui-gmap-google-map, .angular-google-map {
+    width: 100%;
+    height: 100%;
+
+  }
+  .search-button {
+		position: absolute;
+		left: 4px;
+		bottom: 45px;
+		z-index: 10;
+	}
+
+  .marker-labels{
+    border: 1px solid #555;
+    padding: 3px;
+    background-color: white;
+    box-shadow: 1px 1px 2px #555;
+    font-weight: bold;
+    /*margin-left: 10px;
+    margin-top: -10px;*/
+  }
+
+  .button-stable{
+    color: white !important;
+  }
+</style>
+<ion-view view-title="">
+      <ion-nav-buttons side="right">
+        <button ng-click="goToCurrent();" class="button button-stable button-icon icon ion-qr-scanner"></button>
+        <button ng-click="locate();" class="button button-stable button-icon icon ion-pinpoint"></button>
+      </ion-nav-buttons>
+      <!-- <ion-header-bar align-title="left" class="bar-positive">
+        <div class="buttons" ng-hide="showLogin">
+          <button ng-click="locate();" class="button button-stable button-icon icon ion-pinpoint"></button>
+        </div>
+      </ion-header-bar> -->
+
+      <ion-content data-tap-disabled="true">
+
+          <ui-gmap-google-map center='map.center' zoom='map.zoom' ng-show="mostrarMapa">
+             <ui-gmap-markers
+                models="hojaDeRuta.Detalles"
+                coords="'Coordenadas'"
+                idkey="'Id_HojaRuta_Detalle'"
+                events="map.marker.events"
+                icon="'icon'"
+                click="'onClicked'"
+                options="'options'">
+                <ui-gmap-windows show="'showWindow'" closeClick="'closeClick'"  ng-cloak >
+                  <div ng-non-bindable>
+                    <h5>{{ Nombre }}</h5>
+                    <p>{{ Tipo_Resultado.Nombre }}</p>
+                    <button ng-if="Tipo_Resultado == null || Tipo_Resultado == undefined">Hola</button>
+                  </div>
+                </ui-gmap-windows>
+              </ui-gmap-markers>
+
+          </ui-gmap-google-map>
+
+      </ion-content>
+</ion-view>

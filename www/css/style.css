@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: "VAGRoundedStdBlack";
+  src: url("fonts/VAGRoundedStd-Black.otf");
+}
+
+@font-face {
+  font-family: "VAGRoundedStdBold";
+  src: url("fonts/VAGRoundedStd-Bold.otf");
+}
+
+@font-face {
+  font-family: "VAGRoundedStdLight";
+  src: url("fonts/VAGRoundedStd-Light.otf");
+}
+
+@font-face {
+  font-family: "VAGRoundedStdThin";
+  src: url("fonts/VAGRoundedStd-Thin.otf");
+}

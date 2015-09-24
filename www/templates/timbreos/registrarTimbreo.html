@@ -1,0 +1,92 @@
+<style media="screen">
+  .timbreoTitle{
+    text-align: center;
+    color: #666;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  button.big-button {
+    float: left;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    clear: none !important;
+    height: 95px !important;
+  }
+
+  .buttons-container {
+    float: left;
+    padding: 10px;
+    margin: 0 auto;
+    width: 95%;
+    margin-left: 2.5%;
+    border: 1px solid #555;
+    background-color: #FFF;
+    box-shadow: 0px 0px 5px #555 inset;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .direccion {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #999;
+  }
+
+  .button p .icon:before {
+    font-size: 250% !important;
+}
+</style>
+
+<ion-view view-title="">
+  <ion-content>
+    <h3>Hoja de Ruta Nro {{ hojaDeRuta.Nombre }}</h3>
+
+    <div ng-hide="hayDetalle">
+      <h4>¡No tenés más direcciones para visitar!</h4>
+    </div>
+    <div class="buttons-container" ng-show="hayDetalle">
+      <div class="direccion list">
+
+        <div class="item item-button-right item-text-wrap">
+          {{ detalleSeleccionado.Orden }} {{ detalleSeleccionado.Domicilio.Nombre }}
+          <button class="button button-positive" style=" height: 70%; margin-right: -10px;" ng-click="irSiguienteDomicilio()">
+            <i class="icon ion-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="button button-block button-balanced big-button" ng-click="setearPositivo()">
+        Positivo
+        <p>
+          <i class="icon ion-thumbsup"></i>
+        </p>
+      </button>
+
+      <button class="button button-block button-assertive big-button" ng-click="setearNegativo()">
+        Negativo
+        <p>
+          <i class="icon ion-thumbsdown"></i>
+        </p>
+      </button>
+
+      <button class="button button-block button-dark big-button" ng-click="setearNoTimbreable()">
+        No Timbreable
+      </button>
+
+      <button class="button button-block button-stable big-button" ng-click="setearNoResponde()">
+        No Responde
+      </button>
+    </div>
+
+    <button class="button button-block button-positive" ng-click="verMapa()">
+      <i class="icon ion-map" ></i>
+      Ver Recorrido
+    </button>
+
+  </ion-content>
+</ion-view>

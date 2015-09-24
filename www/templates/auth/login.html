@@ -1,0 +1,80 @@
+<style media="screen">
+  .timbreoTitle{
+    text-align: center;
+    color: #666;
+    line-height: 100px;
+  }
+
+  .placeholder-icon.ion-person {
+    margin-right: 10px;
+    border-right: 1px solid #DDD;
+  }
+  .button.backbutton:before{
+    margin-right: 10px !important;
+  }
+
+  .login-content {
+    background-image: url(img/cgi/tramaInf.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+
+  .login-header {
+    background-image: url(img/cgi/tramaSup.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+
+  .logo-cabecera {
+    background: url(img/cgi/Logo-splash.png) center center no-repeat;
+    width: 100%;
+    height: 30%;
+    margin-top: 35px;
+    background-size: 100%;
+  }
+
+  /*.login-button {
+    font-family: "VAGRoundedStdThin" !important;
+    font-size: 36px !important;
+    color: #E64427 !important;
+  }*/
+
+</style>
+<ion-view view-title="Login" name="login-view" class="login-header">
+  <ion-header-bar align-title="left" class="bar-positive login">
+    <div class="buttons" ng-hide="showLogin">
+      <button
+          class="backbutton button icon-left ion-chevron-left button-clear button-dark"
+          ng-click="showLogin = true; login.dni = null">Volver</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding login-content">
+    <!-- <h1 class="timbreoTitle">TimbreoApp</h1> -->
+    <div class="logo-cabecera"></div>
+
+    <form ng-submit="login()" name="loginForm" ng-show="showLogin">
+      <div class="list list-inset">
+          <label class="item item-input">
+  						<i class="icon ion-person placeholder-icon"></i>
+              <input type="number" placeholder="Ingrese DNI" data-ng-model="login.dni" required>
+          </label>
+      </div>
+      <button type="submit" class="button button-block button-dark login-button" ng-disabled="!loginForm.$valid">Ingresar</button>
+    </form>
+
+    <form ng-submit="vincular()" name="vinculacionForm" ng-hide="showLogin">
+      <h4 style="color: #555;">Usted no posee una hoja de ruta vinculada, pero puede ingresarla: </h4>
+
+      <div class="list list-inset">
+          <label class="item item-input">
+  						<i class="icon ion-document placeholder-icon"></i>
+              <input type="number" placeholder="Ingrese Número Hoja de Ruta" ng-model="login.nroHojaRuta">
+          </label>
+      </div>
+
+      <button type="submit" class="button button-block button-dark" ng-disabled="!vinculacionForm.$valid">{{ textoVinculacion }}</button>
+    </form>
+  </ion-content>
+</ion-view>

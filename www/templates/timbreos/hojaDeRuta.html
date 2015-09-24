@@ -1,0 +1,40 @@
+<style media="screen">
+.ion-person {
+  display: none !important;
+}
+
+  .ion-person.POSITIVO {
+    color: green;
+    display: flex !important;
+  }
+
+  .ion-person.NEGATIVO {
+    color: red;
+    display: flex !important;
+  }
+
+  .ion-person.NOTIMBREABLE {
+    color: #555;
+    display: flex !important;
+  }
+
+  .ion-person.NORESPONDE {
+    color: #999;
+    display: flex !important;
+  }
+/*
+  .popup{
+    width: 30% !important;
+  }*/
+</style>
+<ion-view view-title="Hoja de Ruta">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="detalle in hojaDeRuta.Detalles" class="item-icon-right" ng-click="mostrarDetalle({{ detalle }})">
+        {{ detalle.Orden }} {{ detalle.Nombre }}
+        <p>{{ detalle.Tipo_Resultado.Nombre }}</p>
+        <i class="icon ion-person {{ detalle.Tipo_Resultado.Codigo }}"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
