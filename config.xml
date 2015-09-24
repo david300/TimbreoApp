@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.timbreoapp736165" version="0.0.1"
   xmlns="http://www.w3.org/ns/widgets"
-  xmlns:cdv="http://cordova.apache.org/ns/1.0"
-  xmlns:gap="http://phonegap.com/ns/1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+  xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>TimbreoAPP</name>
   <description>
         Aplicación creada para el timbreo de CABA
@@ -18,12 +16,6 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-
-  <!-- PhoneGap plugins for PhoneGap Build to attach to build -->
-  <gap:plugin name="org.apache.cordova.device" version="0.2.12" source="pgb" />
-  <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" source="pgb" />
-  <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" source="pgb" />
-
 
   <plugin name="Device" value="org.apache.cordova.Device"/>
 
