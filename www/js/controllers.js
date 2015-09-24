@@ -205,7 +205,7 @@ angular.module('starter.controllers', [])
       $scope.textoVinculacion = "Vincular Por Hoja de Ruta";
     }
 
-    $scope.$apply();
+    //$scope.$apply();
   });
 
   $scope.vincular = function() {
